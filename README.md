@@ -11,3 +11,4 @@ wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/
 
 ### sources:
 https://github.com/MaksymBilenko/docker-oracle-12c
+https://ajstorm.medium.com/installing-db2-on-your-coffee-break-5be1d811b052
