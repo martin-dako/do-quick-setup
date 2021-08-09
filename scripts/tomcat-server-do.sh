@@ -60,6 +60,9 @@ mkswap /swapfile
 swapon /swapfile
 echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
 
+echo "Waiting for Tomcat to finish file creation"
+sleep 10
+
 cd /opt/tomcat/conf/Catalina/localhost
 echo "<Context override=\"true\" docBase=\"/opt/tomcat/logs\" path=\"/logs\" />" >> logs.xml
 systemctl restart tomcat
