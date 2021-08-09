@@ -1,0 +1,1 @@
+echo "Username: $1 and password: $2";
