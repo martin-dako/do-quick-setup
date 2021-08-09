@@ -46,6 +46,10 @@ python -c $"import sys;handle=open('/opt/tomcat/conf/tomcat-users.xml', 'r+');li
 python -c "import sys;handle=open('/opt/tomcat/webapps/manager/META-INF/context.xml', 'r+');lines=handle.read();  print lines.replace('<Valve className=\"org.apache.catalina.valves.RemoteAddrValve\"','<!-- <Valve className=\"org.apache.catalina.valves.RemoteAddrValve\"',1).replace('0:0:0:0:0:0:0:1\" />','0:0:0:0:0:0:0:1\" /> -->',1); handle.truncate(0);handle.close()" >> /opt/tomcat/webapps/manager/META-INF/context.xml
 python -c "import sys;handle=open('/opt/tomcat/webapps/host-manager/META-INF/context.xml', 'r+');lines=handle.read();  print lines.replace('<Valve className=\"org.apache.catalina.valves.RemoteAddrValve\"','<!-- <Valve className=\"org.apache.catalina.valves.RemoteAddrValve\"',1).replace('0:0:0:0:0:0:0:1\" />','0:0:0:0:0:0:0:1\" /> -->',1); handle.truncate(0);handle.close()" >> /opt/tomcat/webapps/host-manager/META-INF/context.xml
 
+
+cd /opt/tomcat/conf/Catalina/localhost
+echo "<Context override=\"true\" docBase=\"/opt/tomcat/logs\" path=\"/logs\" />" >> logs.xml
+
 systemctl daemon-reload
 systemctl start tomcat
 ufw allow 8080
