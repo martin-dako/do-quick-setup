@@ -15,7 +15,7 @@ wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/
 
 ## Spring Boot using pm2 as a service with java 21
 ### change "repo" with git repo of spring boot project, gradlew must be present in root "token" with github token and port with port of app
-wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/spring-boot.sh | bash -s "repo" "token" "port"
+wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/spring-boot-21.sh | bash -s "repo" "token" "port"
 
 
 ### sources:
