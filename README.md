@@ -9,6 +9,10 @@ wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/
 ## DB2
 wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/db2-setup-do.sh | bash
 
+## Setup shell (nnn, zsh...)
+wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/shell-setup.sh | bash
+
+
 ## Tomcat server (Java 14)
 ### Change "username" with tomcat login user, "password" with password, 16G is 16 GB swap file 
 wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/tomcat-server-do.sh | bash -s "username" "password" "16G"
