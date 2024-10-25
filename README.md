@@ -22,7 +22,8 @@ wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/
 ### Change "repo" with git repo of spring boot project, gradlew must be present in root folder. Replace "token" with github token and port with wanted port of an app
 wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/spring-boot-21.sh | bash -s "repo" "token" "port"
 
-
+#### Deploy ZSH .zshrc snippet
+alias deploy='wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/spring-boot-21.sh | bash -s "<SPRINGBOOT_REPO>" "<TOKEN>" "<PORT>"'
 
 ### sources:
 https://github.com/MaksymBilenko/docker-oracle-12c
