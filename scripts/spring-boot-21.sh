@@ -12,9 +12,9 @@ TOKEN="$2"
 PORT="$3"
 REPO_NAME_PATH=`basename -s .git "$REPO_URL"`
 
-# Remove existing install.sh if it exists
-if [ -f /var/install.sh ]; then
-  sudo rm /var/install.sh
+# Remove existing install-$REPO_NAME_PATH if it exists
+if [ -f /var/install-$REPO_NAME_PATH.sh ]; then
+  sudo rm /var/install-$REPO_NAME_PATH.sh
 fi
 
 # Define the script's content with embedded variables
@@ -117,7 +117,7 @@ echo "Deployment complete. The application is running with PM2 on port \$PORT."
 EOF
 )
 
-# Save the script to /var/install.sh
+# Save the script to /var/install-$REPO_NAME_PATH.sh
 echo "$SCRIPT_CONTENT" | sudo tee /var/install-$REPO_NAME_PATH.sh > /dev/null
 
 # Make the script executable
