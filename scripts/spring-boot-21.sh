@@ -126,3 +126,4 @@ sudo chmod +x /var/install-$REPO_NAME_PATH.sh
 # Notify the user
 echo "The script has been created at /var/install-<reponame>.sh and can be run by executing ./install-<reponame>.sh"
 sudo /var/install-$REPO_NAME_PATH.sh
+echo "script is now executed"
