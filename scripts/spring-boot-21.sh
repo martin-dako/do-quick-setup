@@ -10,6 +10,7 @@ fi
 REPO_URL="$1"
 TOKEN="$2"
 PORT="$3"
+REPO_NAME_PATH=\$(basename -s .git "\$REPO_URL")
 
 # Remove existing install.sh if it exists
 if [ -f /var/install.sh ]; then
@@ -117,11 +118,11 @@ EOF
 )
 
 # Save the script to /var/install.sh
-echo "$SCRIPT_CONTENT" | sudo tee /var/install.sh > /dev/null
+echo "$SCRIPT_CONTENT" | sudo tee /var/install-$REPO_NAME_PATH.sh > /dev/null
 
 # Make the script executable
-sudo chmod +x /var/install.sh
+sudo chmod +x /var/install-$REPO_NAME_PATH.sh
 
 # Notify the user
-echo "The script has been created at /var/install.sh and can be run by executing ./install.sh"
+echo "The script has been created at /var/install-<reponame>.sh and can be run by executing ./install-<reponame>.sh"
 sudo /var/install.sh
