@@ -10,7 +10,7 @@ fi
 REPO_URL="$1"
 TOKEN="$2"
 PORT="$3"
-REPO_NAME=`basename -s .git "$REPO_URL"`
+REPO_NAME_PATH=`basename -s .git "$REPO_URL"`
 
 # Remove existing install.sh if it exists
 if [ -f /var/install.sh ]; then
