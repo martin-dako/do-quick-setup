@@ -26,7 +26,7 @@ wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/
 alias deploy='wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/spring-boot-21.sh | bash -s "SPRINGBOOT_REPO" "TOKEN" "PORT"'
 
 ## Enable HTTPS on server
-save and run https.sh "DOMAIN" "MAIL" "KEYSTORE_PASS" with chmod +x https.sh, params are: 
+run https.sh "DOMAIN" "MAIL" "KEYSTORE_PASS" with chmod +x https.sh
 
 
 ### sources:
