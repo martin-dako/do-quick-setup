@@ -31,6 +31,9 @@ run https.sh "DOMAIN" "MAIL" "KEYSTORE_PASS" with chmod +x https.sh
 ## Fix for certbot on server if there is apache installed because of port collision
 run certbot-apache-collision-fix.sh "DOMAIN"
 
+## Enable swap file
+wget -O - https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/swap.sh | bash
+
 
 ### sources:
 https://github.com/MaksymBilenko/docker-oracle-12c
