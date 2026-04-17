@@ -28,6 +28,9 @@ alias deploy='wget -O - https://raw.githubusercontent.com/martin-dako/do-databas
 ## Enable HTTPS on server
 run https.sh "DOMAIN" "MAIL" "KEYSTORE_PASS" with chmod +x https.sh
 
+### One-liner: clones only https.sh and runs it with the provided arguments
+curl -sSL https://raw.githubusercontent.com/martin-dako/do-database-quick-setup/master/scripts/https-setup.sh | bash -s "DOMAIN" "MAIL" "KEYSTORE_PASS"
+
 ## Fix for certbot on server if there is apache installed because of port collision
 run certbot-apache-collision-fix.sh "DOMAIN"
 
