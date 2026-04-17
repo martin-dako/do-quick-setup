@@ -59,31 +59,16 @@ if ! command -v pm2 &> /dev/null; then
     sudo npm install -g pm2
 fi
 
-# Clone or update the repository
+# Remove existing repo directory and do a clean clone
 if [ -d "\$REPO_DIR" ]; then
-    echo "Repository exists. Checking for changes..."
-    cd "\$REPO_DIR"
-    
-    # Fetch latest changes
-    git fetch
-
-    # Check if there are any changes
-    LOCAL_COMMIT=\$(git rev-parse HEAD)
-    REMOTE_COMMIT=\$(git rev-parse @{u})
-
-    if [ "\$LOCAL_COMMIT" = "\$REMOTE_COMMIT" ]; then
-        echo "Repository is unchanged. The script will not continue."
-        exit 0
-    else
-        echo "Repository has changes. Pulling the latest changes..."
-        git pull
-    fi
-else
-    echo "Cloning the repository..."
-    sudo mkdir -p "\$REPO_DIR"
-    sudo git clone https://\$TOKEN@\${REPO_URL#https://} "\$REPO_DIR"
-    cd "\$REPO_DIR"
+    echo "Repository exists. Removing existing directory for clean clone..."
+    sudo rm -rf "\$REPO_DIR"
 fi
+
+echo "Cloning the repository..."
+sudo mkdir -p "\$REPO_DIR"
+sudo git clone https://\$TOKEN@\${REPO_URL#https://} "\$REPO_DIR"
+cd "\$REPO_DIR"
 
 # Make the Gradle wrapper executable
 if [ -f "./gradlew" ]; then
