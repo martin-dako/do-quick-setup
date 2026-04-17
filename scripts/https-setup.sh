@@ -31,7 +31,7 @@ cd "$WORK_DIR"
 
 # Sparse clone to fetch only scripts/https.sh
 git clone --depth 1 --filter=blob:none --sparse "$REPO_URL" .
-git sparse-checkout set scripts/https.sh
+git sparse-checkout set --no-cone scripts/https.sh
 
 # Make it executable and run with provided arguments
 chmod +x scripts/https.sh
